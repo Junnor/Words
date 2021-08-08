@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5BD25A149F0EDC16BADD5120 /* Pods_Words.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D13FAF275DE3D660AF64F8 /* Pods_Words.framework */; };
+		8B00D46C26C02669009FE789 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B00D46B26C02669009FE789 /* Helper.swift */; };
 		8BA4483326BF94C1006CBC6D /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4483226BF94C1006CBC6D /* Words.swift */; };
 		8BA4483526BF95E2006CBC6D /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4483426BF95E2006CBC6D /* WordCell.swift */; };
 		8BE033CB26BFF75300022C2B /* WordsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE033CA26BFF75300022C2B /* WordsManager.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		87D13FAF275DE3D660AF64F8 /* Pods_Words.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Words.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B00D46B26C02669009FE789 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8BA4483226BF94C1006CBC6D /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		8BA4483426BF95E2006CBC6D /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		8BE033CA26BFF75300022C2B /* WordsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsManager.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				8BA4483426BF95E2006CBC6D /* WordCell.swift */,
 				8BA4483226BF94C1006CBC6D /* Words.swift */,
 				8BE033CA26BFF75300022C2B /* WordsManager.swift */,
+				8B00D46B26C02669009FE789 /* Helper.swift */,
 				8BEAF4BA26BF9380004A99DB /* Main.storyboard */,
 				8BEAF4BD26BF9381004A99DB /* Assets.xcassets */,
 				8BEAF4BF26BF9381004A99DB /* LaunchScreen.storyboard */,
@@ -224,6 +227,7 @@
 				8BEAF4B526BF9380004A99DB /* AppDelegate.swift in Sources */,
 				8BEAF4B726BF9380004A99DB /* SceneDelegate.swift in Sources */,
 				8BE033CD26C0079800022C2B /* DetailViewController.swift in Sources */,
+				8B00D46C26C02669009FE789 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

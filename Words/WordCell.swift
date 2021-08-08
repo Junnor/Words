@@ -28,7 +28,7 @@ class DateHeaderView: UICollectionReusableView {
         super.init(frame: frame)
         
         backgroundColor = UIColor(red: 246/255.0, green: 246/255.0, blue: 246/255.0, alpha: 1)
-
+        
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
@@ -40,7 +40,7 @@ class DateHeaderView: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
 
 class WordCell: UICollectionViewCell {
@@ -66,7 +66,7 @@ class WordCell: UICollectionViewCell {
         contentView.addSubview(detailLabel)
         
         let edge: CGFloat = 16
-
+        
         let bottomView = UIView()
         contentView.addSubview(bottomView)
         bottomView.backgroundColor = .systemGray6
@@ -103,12 +103,25 @@ class WordInfoCell: UICollectionViewCell {
     
     static let font = UIFont.systemFont(ofSize: 15, weight: .regular)
     static let edge: CGFloat = 16
-
+    
     private(set) lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = WordInfoCell.font
-        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
+        return label
+    }()
+    
+    private(set) lazy var detailLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGray
+        label.font = .systemFont(ofSize: 12, weight: .regular)
+        return label
+    }()
+    
+    private(set) lazy var meaningLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 15, weight: .regular)
         return label
     }()
     
@@ -116,8 +129,11 @@ class WordInfoCell: UICollectionViewCell {
         super.init(frame: frame)
         
         contentView.addSubview(titleLabel)
-        
+        contentView.addSubview(detailLabel)
+        contentView.addSubview(meaningLabel)
 
+        let edge: CGFloat = 16
+        
         let bottomView = UIView()
         contentView.addSubview(bottomView)
         bottomView.backgroundColor = .systemGray6
@@ -127,10 +143,22 @@ class WordInfoCell: UICollectionViewCell {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.leading.equalTo(WordInfoCell.edge)
-            make.centerX.equalToSuperview()
+            make.top.equalTo(16)
+            make.leading.equalTo(edge)
         }
+        
+        detailLabel.snp.makeConstraints { make in
+            make.leading.equalTo(edge)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+        }
+
+        meaningLabel.snp.makeConstraints { make in
+            make.leading.equalTo(edge)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(detailLabel.snp.bottom).offset(4)
+        }
+        
     }
     
     required init?(coder: NSCoder) {
@@ -138,7 +166,11 @@ class WordInfoCell: UICollectionViewCell {
     }
     
     func updateWithWordInfo(_ info: WordInfo) {
-        titleLabel.text = info.showText
+        titleLabel.text = info.name
+        detailLabel.text = info.pronounce
+        meaningLabel.text = "\(info.type). \(info.meaning)"
     }
     
 }
+
+

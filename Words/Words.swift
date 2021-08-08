@@ -32,8 +32,4 @@ struct WordInfo {
     var pronounce: String
     var type: String
     var meaning: String
-    
-    var showText: String {
-        "\(name)  \(pronounce)  \n\n\(type).\(meaning)"
-    }
 }
