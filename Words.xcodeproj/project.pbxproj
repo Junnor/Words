@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013D9C2426E0D7E0009C17F3 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D9C2326E0D7E0009C17F3 /* ImageViewController.swift */; };
+		013D9C2726E0DAC7009C17F3 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D9C2626E0DAC7009C17F3 /* UIDevice+Extensions.swift */; };
 		5BD25A149F0EDC16BADD5120 /* Pods_Words.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D13FAF275DE3D660AF64F8 /* Pods_Words.framework */; };
 		8B00D46C26C02669009FE789 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B00D46B26C02669009FE789 /* Helper.swift */; };
 		8BA4483326BF94C1006CBC6D /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4483226BF94C1006CBC6D /* Words.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013D9C2326E0D7E0009C17F3 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		013D9C2626E0DAC7009C17F3 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		87D13FAF275DE3D660AF64F8 /* Pods_Words.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Words.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B00D46B26C02669009FE789 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8BA4483226BF94C1006CBC6D /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
@@ -94,10 +98,12 @@
 				8BEAF4B626BF9380004A99DB /* SceneDelegate.swift */,
 				8BEAF4B826BF9380004A99DB /* ViewController.swift */,
 				8BE033CC26C0079800022C2B /* DetailViewController.swift */,
+				013D9C2326E0D7E0009C17F3 /* ImageViewController.swift */,
 				8BA4483426BF95E2006CBC6D /* WordCell.swift */,
 				8BA4483226BF94C1006CBC6D /* Words.swift */,
 				8BE033CA26BFF75300022C2B /* WordsManager.swift */,
 				8B00D46B26C02669009FE789 /* Helper.swift */,
+				013D9C2626E0DAC7009C17F3 /* UIDevice+Extensions.swift */,
 				8BEAF4BA26BF9380004A99DB /* Main.storyboard */,
 				8BEAF4BD26BF9381004A99DB /* Assets.xcassets */,
 				8BEAF4BF26BF9381004A99DB /* LaunchScreen.storyboard */,
@@ -221,7 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BEAF4B926BF9380004A99DB /* ViewController.swift in Sources */,
+				013D9C2426E0D7E0009C17F3 /* ImageViewController.swift in Sources */,
 				8BA4483326BF94C1006CBC6D /* Words.swift in Sources */,
+				013D9C2726E0DAC7009C17F3 /* UIDevice+Extensions.swift in Sources */,
 				8BA4483526BF95E2006CBC6D /* WordCell.swift in Sources */,
 				8BE033CB26BFF75300022C2B /* WordsManager.swift in Sources */,
 				8BEAF4B526BF9380004A99DB /* AppDelegate.swift in Sources */,
