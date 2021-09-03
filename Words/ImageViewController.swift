@@ -9,8 +9,8 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
-    init(images: [String]) {
-        self.images = images
+    init(word: Word) {
+        self.word = word
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -18,7 +18,8 @@ class ImageViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private let images: [String]
+    private let word: Word
+    private var images: [String] = []
     
     private var imageWidth: CGFloat {
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -36,8 +37,10 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = word.name
         view.backgroundColor = .white
-                    
+        images = [word.imageName]
+
         configureImages()
     }
     
@@ -53,14 +56,14 @@ class ImageViewController: UIViewController {
         
         for i in 0..<images.count {
             let image = UIImage(named: images[i])!
-            let imageView = UIImageView()
-            imageView.image = image
-            imageView.contentMode = .scaleAspectFit
-            scrollView.addSubview(imageView)
-            imageView.frame = CGRect(x: (UIDevice.screenWidth-imageWidth)/2, y: beginY, width: imageWidth, height: imageWidth * image.size.height/image.size.width)
+            let frame = CGRect(x: (UIDevice.screenWidth-imageWidth)/2, y: beginY, width: imageWidth, height: imageWidth * image.size.height/image.size.width)
+
+            let layer = CALayer()
+            layer.frame = frame
+            layer.contents = image.cgImage
+            scrollView.layer.addSublayer(layer)
             
-            contentHeight = imageView.frame.maxY
-            
+            contentHeight = frame.maxY
             beginY = contentHeight + gap
         }
         contentHeight += gap

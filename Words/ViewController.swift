@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 var screenWidth: CGFloat {
     UIScreen.main.bounds.width
 }
@@ -20,12 +18,9 @@ class ViewController: UIViewController {
         layout.itemSize = CGSize(width: screenWidth, height: 70)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        layout.sectionHeadersPinToVisibleBounds = true
-        layout.headerReferenceSize = CGSize(width: screenWidth, height: 60)
-        
+
         let vc = UICollectionView(frame: .zero, collectionViewLayout: layout)
         vc.register(WordCell.self, forCellWithReuseIdentifier: WordCell.identifier)
-        vc.register(DateHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: DateHeaderView.identifier)
         
         vc.dataSource = self
         vc.delegate = self
@@ -36,7 +31,7 @@ class ViewController: UIViewController {
         return vc
     }()
 
-    private lazy var dateWords: [DateWords] = WordsManager.shared.items()
+    private lazy var words: [Word] = WordsManager.shared.items()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,43 +48,24 @@ class ViewController: UIViewController {
 
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        dateWords.count
-    }
-    
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dateWords[section].words.count
+        words.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WordCell.identifier, for: indexPath)
         
         if let cell = cell as? WordCell {
-            let word = dateWords[indexPath.section].words[indexPath.item]
+            let word = words[indexPath.item]
             cell.updateWithWord(word)
         }
         
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DateHeaderView.identifier, for: indexPath)
-        if let header = header as? DateHeaderView {
-            header.titleLabel.text = dateWords[indexPath.section].date.date
-        }
-        return header
-    }
-    
+        
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let names: [String] = ["jack1", "jack2", "ros", "dim"]
-        let values = names.shuffled()
-        let vc = ImageViewController(images: [values[0], values[1]])
-
-//        let vc = DetailViewController()
-//        vc.word = dateWords[indexPath.section].words[indexPath.item]
-        
+        let vc = ImageViewController(word: words[words.count-1])
         navigationController?.pushViewController(vc, animated: true)
     }
     
