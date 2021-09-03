@@ -20,6 +20,19 @@ class ImageViewController: UIViewController {
     
     private let images: [String]
     
+    private var imageWidth: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 500
+        }
+        return UIDevice.screenWidth - 20
+    }
+    
+    private var gap: CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 50
+        }
+        return 50
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,12 +45,11 @@ class ImageViewController: UIViewController {
         let scrollView = UIScrollView()
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: UIDevice.navigationBarHeight + 50, left: 0, bottom: 0, right: 0))
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: UIDevice.navigationBarHeight, left: 0, bottom: 0, right: 0))
         }
-        let imageWidth: CGFloat = 500
         
         var contentHeight: CGFloat = 0
-        var beginY: CGFloat = 50
+        var beginY: CGFloat = gap
         
         for i in 0..<images.count {
             let image = UIImage(named: images[i])!
@@ -49,9 +61,9 @@ class ImageViewController: UIViewController {
             
             contentHeight = imageView.frame.maxY
             
-            beginY = contentHeight + 50
+            beginY = contentHeight + gap
         }
-        contentHeight += 50
+        contentHeight += gap
         
         scrollView.contentSize = CGSize(width: imageWidth, height: contentHeight)
     }
