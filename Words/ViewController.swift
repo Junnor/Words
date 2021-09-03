@@ -82,13 +82,15 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ImageViewController()
+        
+        let names: [String] = ["jack1", "jack2", "ros", "dim"]
+        let values = names.shuffled()
+        let vc = ImageViewController(images: [values[0], values[1]])
 
 //        let vc = DetailViewController()
 //        vc.word = dateWords[indexPath.section].words[indexPath.item]
+        
         navigationController?.pushViewController(vc, animated: true)
-        
-        
     }
     
 }
