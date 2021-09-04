@@ -65,7 +65,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
         
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ImageViewController(word: words[words.count-1])
+        let vc = ImageViewController(word: words.last!)
         navigationController?.pushViewController(vc, animated: true)
     }
     

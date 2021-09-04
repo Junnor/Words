@@ -12,7 +12,15 @@ struct Word {
     let id: Int
     let name: String       // 词根
     let word: String       // 单词例子
-    let imageName: String  // 单词图片
+    fileprivate let imageName: String  // 单词图片
+    
+    var images: String {
+        if imageName.isEmpty {
+            return name
+        } else {
+            return imageName
+        }
+    }
 }
 
 class WordsManager {
@@ -21,7 +29,7 @@ class WordsManager {
     private init() {}
     
     func items() -> [Word] {
-        [dur, holic, alt, pany, dol, migr, tangle, fla, umb, err, deb, am, staff, fran, ploy, jelly, ole, ee, conq, bhor, haus, doc, awe, er, can, viro, rar, dim]
+        [dur, holic, alt, pany, dol, migr, tangle, fla, umb, err, deb, am, staff, fran, ploy, jelly, ole, ee, conq, bhor, haus, doc, awe, er, can, viro, rar, dim, bi]
     }
     
     private var id = 1
@@ -32,6 +40,10 @@ class WordsManager {
     
     // MARK: - words
         
+    private lazy var bi: Word = {
+        return createWord(name: "bi", word: "biology")
+    }()
+    
     private lazy var dur: Word = {
         return createWord(name: "dur", word: "durex")
     }()

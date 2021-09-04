@@ -39,7 +39,7 @@ class ImageViewController: UIViewController {
 
         title = word.name
         view.backgroundColor = .white
-        images = [word.imageName]
+        images = [word.images]
 
         configureImages()
     }
@@ -55,7 +55,9 @@ class ImageViewController: UIViewController {
         var beginY: CGFloat = gap
         
         for i in 0..<images.count {
-            let image = UIImage(named: images[i])!
+            let name = images[i]
+            print("name = [\(name)]")
+            let image = UIImage(named: name)!
             let frame = CGRect(x: (UIDevice.screenWidth-imageWidth)/2, y: beginY, width: imageWidth, height: imageWidth * image.size.height/image.size.width)
 
             let layer = CALayer()
