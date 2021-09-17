@@ -33,8 +33,6 @@ class ViewController: UIViewController {
         return vc
     }()
 
-//    private lazy var words: [Word] = WordsManager.shared.items()
-
     private var words: Results<Word>!
     private var itemsToken: NotificationToken?
 
@@ -49,6 +47,11 @@ class ViewController: UIViewController {
         }
         
         let localRealm = try! Realm()
+        
+        try? localRealm.write {
+            localRealm.deleteAll()
+        }
+        
         words = localRealm.objects(Word.self).sorted(byKeyPath: "id")
                 
         itemsToken = words.observe { (changes) in
@@ -95,7 +98,6 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
         
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let vc = ImageViewController(word: words.last!)
         let vc = ImageViewController(word: words[indexPath.item])
         navigationController?.pushViewController(vc, animated: true)
     }

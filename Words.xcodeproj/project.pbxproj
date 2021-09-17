@@ -10,6 +10,7 @@
 		013D9C2426E0D7E0009C17F3 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D9C2326E0D7E0009C17F3 /* ImageViewController.swift */; };
 		013D9C2726E0DAC7009C17F3 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D9C2626E0DAC7009C17F3 /* UIDevice+Extensions.swift */; };
 		018D672F26F47EBA00806AA1 /* holic_gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 018D672D26F47EBA00806AA1 /* holic_gif.gif */; };
+		018D673326F498A900806AA1 /* tangle_gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 018D673226F498A900806AA1 /* tangle_gif.gif */; };
 		5BD25A149F0EDC16BADD5120 /* Pods_Words.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D13FAF275DE3D660AF64F8 /* Pods_Words.framework */; };
 		8B00D46C26C02669009FE789 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B00D46B26C02669009FE789 /* Helper.swift */; };
 		8BA4483526BF95E2006CBC6D /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA4483426BF95E2006CBC6D /* WordCell.swift */; };
@@ -26,6 +27,7 @@
 		013D9C2326E0D7E0009C17F3 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		013D9C2626E0DAC7009C17F3 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		018D672D26F47EBA00806AA1 /* holic_gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = holic_gif.gif; sourceTree = "<group>"; };
+		018D673226F498A900806AA1 /* tangle_gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tangle_gif.gif; sourceTree = "<group>"; };
 		87D13FAF275DE3D660AF64F8 /* Pods_Words.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Words.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B00D46B26C02669009FE789 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8BA4483426BF95E2006CBC6D /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				018D672D26F47EBA00806AA1 /* holic_gif.gif */,
+				018D673226F498A900806AA1 /* tangle_gif.gif */,
 			);
 			path = Gif;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018D673326F498A900806AA1 /* tangle_gif.gif in Resources */,
 				8BEAF4C126BF9381004A99DB /* LaunchScreen.storyboard in Resources */,
 				8BEAF4BE26BF9381004A99DB /* Assets.xcassets in Resources */,
 				8BEAF4BC26BF9380004A99DB /* Main.storyboard in Resources */,
