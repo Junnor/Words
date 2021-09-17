@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 var screenWidth: CGFloat {
     UIScreen.main.bounds.width
@@ -42,6 +43,9 @@ class ViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        try? AVAudioSession.sharedInstance().setCategory(.playback, options: .allowBluetooth)
+        
     }
 
 }
@@ -65,7 +69,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
         
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ImageViewController(word: words.last!)
+//        let vc = ImageViewController(word: words.last!)
+        let vc = ImageViewController(word: words[indexPath.item])
         navigationController?.pushViewController(vc, animated: true)
     }
     
