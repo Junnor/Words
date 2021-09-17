@@ -6,20 +6,32 @@
 //
 
 import UIKit
+import RealmSwift
 
-
-struct Word {
-    let id: Int
-    let name: String         // 词根
-    let word: String         // 单词例子
-    let original: String     // 词根的原始意思
+class Word: Object {
     
-    let resource: String?    // 辅助记忆的图片或者gif
-    let made: String?        // 词根的组成（拆解说明）或者来源
+    @objc dynamic var id: Int = 0
     
-    fileprivate let imageName: String  // 单词图片
+    // 词根
+    @objc dynamic var name: String = ""
     
-    var success = false // 是否记住
+    // 单词例子
+    @objc dynamic var word: String = ""
+    
+    // 词根的原始意思
+    @objc dynamic var original: String = ""
+    
+    // 辅助记忆的图片或者gif
+    @objc dynamic var resource: String? = nil
+    
+    // 词根的组成（拆解说明）或者来源
+    @objc dynamic var made: String? = nil
+    
+    // 单词图片
+    @objc dynamic var imageName: String = ""
+    
+    // 是否记住
+    @objc dynamic var success = false
     
     var images: String {
         if imageName.isEmpty {
@@ -28,6 +40,20 @@ struct Word {
             return imageName
         }
     }
+    
+    convenience init(id: Int, name: String, word: String, original: String, resource: String?, made: String?, imageName: String, success: Bool) {
+        self.init()
+        
+        self.id = id
+        self.name = name
+        self.word = word
+        self.original = original
+        self.resource = resource
+        self.made = made
+        self.imageName = imageName
+        self.success = success
+    }
+    
 }
 
 class WordsManager {

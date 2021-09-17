@@ -7,6 +7,7 @@
 
 import UIKit
 import AVKit
+import RealmSwift
 
 var screenWidth: CGFloat {
     UIScreen.main.bounds.width
@@ -32,7 +33,10 @@ class ViewController: UIViewController {
         return vc
     }()
 
-    private lazy var words: [Word] = WordsManager.shared.items()
+//    private lazy var words: [Word] = WordsManager.shared.items()
+
+    private var words: Results<Word>!
+    private var itemsToken: NotificationToken?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +48,30 @@ class ViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        try? AVAudioSession.sharedInstance().setCategory(.playback, options: .allowBluetooth)
-        
+        let localRealm = try! Realm()
+        words = localRealm.objects(Word.self).sorted(byKeyPath: "id")
+                
+        itemsToken = words.observe { (changes) in
+            switch changes {
+            case .initial: break
+            // Results are now populated and can be accessed without blocking the UI
+            case .update(_, let deletions, let insertions, let modifications):
+                // Query results have changed.
+                print("Deleted indices: ", deletions)
+                print("Inserted indices: ", insertions)
+                print("Modified modifications: ", modifications)
+            case .error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                fatalError("\(error)")
+            }
+        }
+
+        print("words.count = \(words.count)")
+        if words.isEmpty {
+            try? localRealm.write {
+                localRealm.add(WordsManager.shared.items())
+            }
+        }
     }
 
 }
