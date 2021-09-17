@@ -75,6 +75,7 @@ class WordsManager {
     
     // MARK: - words
     
+    // MARK: - 01
     private lazy var dur: Word = {
         return createWord(name: "dur", word: "durex", original: "持久", resource: "dur_r", made: nil)
     }()
@@ -115,6 +116,7 @@ class WordsManager {
         return createWord(name: "err", word: "error", original: "错误", resource: "err_r", made: nil)
     }()
 
+    // MARK: - 11
     private lazy var deb: Word = {
         return createWord(name: "deb", word: "debt", original: "original", resource: "resource", made: nil)
     }()
@@ -155,6 +157,7 @@ class WordsManager {
         return createWord(name: "bhor", word: "abhor", original: "original", resource: "resource", made: nil)
     }()
 
+    // MARK: - 21
     private lazy var haus: Word = {
         return createWord(name: "haus", word: "exhaust", original: "original", resource: "resource", made: nil)
     }()
