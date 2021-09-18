@@ -39,7 +39,8 @@ class ImageViewController: UIViewController {
 
         title = word.name
         view.backgroundColor = .white
-        images = [word.images]
+
+        images = word.images.components(separatedBy: ",")
 
         configureImages()
     }

@@ -63,8 +63,8 @@ class WordsManager {
     
     func items() -> [Word] {
         [dur, holic, alt, pany, dol, migr, tangle, fla, umb, err,
-         deb, am, staff, fran, ploy, jelly, ole, ee, conq, bhor,
-         haus, doc, awe, er, can, viro, rar, dim, bi]
+         deb, am, staff, ploy, jelly, ole, ee, conq, bhor, haus,
+         doc, awe, er, can, viro, rar, dim, bi]
     }
     
     private var id = 1
@@ -118,79 +118,75 @@ class WordsManager {
 
     // MARK: - 11
     private lazy var deb: Word = {
-        return createWord(name: "deb", word: "debt", original: "original", resource: "resource", made: nil)
+        return createWord(name: "deb", word: "debt", original: "货币，借款", resource: "deb_r", made: nil)
     }()
 
     private lazy var am: Word = {
-        return createWord(name: "am", word: "amour", original: "original", resource: "resource", made: nil)
+        return createWord(name: "am", word: "amour", original: "爱慕 恋爱", resource: "am_gif", made: nil)
     }()
     
     private lazy var staff: Word = {
-        return createWord(name: "staff", word: "staff", original: "original", resource: "resource", made: nil)
-    }()
-
-    private lazy var fran: Word = {
-        return createWord(name: "fran", word: "frenzy", original: "original", resource: "resource", made: nil)
+        return createWord(name: "staff fran", word: "staff frenzy", original: "职员 拂然", resource: "staff_r", made: nil, imageName: "staff,fran")
     }()
 
     private lazy var ploy: Word = {
-        return createWord(name: "ploy", word: "employee", original: "original", resource: "resource", made: nil)
+        return createWord(name: "ploy", word: "employee", original: "剥削 压榨 员工", resource: "ploy_r", made: nil)
     }()
 
     private lazy var jelly: Word = {
-        return createWord(name: "jelly", word: "jel", original: "original", resource: "resource", made: nil)
+        return createWord(name: "jelly", word: "jel", original: "original", made: nil)
     }()
 
     private lazy var ole: Word = {
-        return createWord(name: "ole", word: "oleic", original: "original", resource: "resource", made: nil)
+        return createWord(name: "ole", word: "oleic", original: "original", made: nil)
     }()
 
     private lazy var ee: Word = {
-        return createWord(name: "ee", word: "employee", original: "original", resource: "resource", made: nil)
+        return createWord(name: "ee", word: "employee", original: "original", made: nil)
     }()
 
     private lazy var conq: Word = {
-        return createWord(name: "conq", word: "conquer", original: "original", resource: "resource", made: nil)
+        return createWord(name: "conq", word: "conquer", original: "original", made: nil)
     }()
 
     private lazy var bhor: Word = {
-        return createWord(name: "bhor", word: "abhor", original: "original", resource: "resource", made: nil)
+        return createWord(name: "bhor", word: "abhor", original: "original", made: nil)
     }()
 
     // MARK: - 21
     private lazy var haus: Word = {
-        return createWord(name: "haus", word: "exhaust", original: "original", resource: "resource", made: nil)
+        return createWord(name: "haus", word: "exhaust", original: "original", made: nil)
     }()
 
     private lazy var doc: Word = {
-        return createWord(name: "doc", word: "docent", original: "original", resource: "resource", made: nil)
+        return createWord(name: "doc", word: "docent", original: "original", made: nil)
     }()
 
     private lazy var awe: Word = {
-        return createWord(name: "awe", word: "awed", original: "original", resource: "resource", made: nil)
+        return createWord(name: "awe", word: "awed", original: "original", made: nil)
     }()
 
     private lazy var er: Word = {
-        return createWord(name: "-er", word: "teacher", original: "original", resource: "resource", made: nil)
+        return createWord(name: "-er", word: "teacher", original: "original", made: nil)
     }()
 
     private lazy var can: Word = {
-        return createWord(name: "can", word: "can", original: "original", resource: "resource", made: nil)
+        return createWord(name: "can", word: "can", original: "original", made: nil)
     }()
 
     private lazy var viro: Word = {
-        return createWord(name: "viro", word: "environment", original: "original", resource: "resource", made: nil)
+        return createWord(name: "viro", word: "environment", original: "original", made: nil)
     }()
 
     private lazy var rar: Word = {
-        return createWord(name: "rar", word: "rare", original: "original", resource: "resource", made: nil)
+        return createWord(name: "rar", word: "rare", original: "original", made: nil)
     }()
     
     private lazy var dim: Word = {
-        return createWord(name: "dim", word: "dim", original: "original", resource: "resource", made: nil)
+        return createWord(name: "dim", word: "dim", original: "original", made: nil)
     }()
 
     private lazy var bi: Word = {
-        return createWord(name: "bi", word: "biology", original: "original", resource: "resource", made: nil)
+        return createWord(name: "bi", word: "biology", original: "original", made: nil)
     }()
 }

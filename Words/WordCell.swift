@@ -65,7 +65,7 @@ class WordCell: UICollectionViewCell {
     
     func updateWithWord(_ word: Word) {
         titleLabel.text = word.name
-        detailLabel.text = "\(word.original) " + word.word
+        detailLabel.text = "\(word.original)   " + word.word
     }
     
 }
